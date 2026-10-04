@@ -108,6 +108,9 @@ section{max-width:1200px;margin:auto;padding:6.5rem 1.5rem}
 .stat h3{font-size:2.8rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat p{color:var(--muted);font-size:.9rem}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-main{display:grid;grid-template-columns:190px 1fr;gap:1.6rem;align-items:start}
+.me{margin:0;padding:3px;border-radius:24px;background:var(--grad);aspect-ratio:4/5;box-shadow:0 20px 50px -20px rgba(124,92,255,.5)}
+.me img{width:100%;height:100%;object-fit:cover;border-radius:21px;display:block;background:var(--bg2)}
 .about p{color:var(--muted);margin-bottom:1.2rem;font-size:1.05rem}
 .about p b{color:var(--text);font-weight:600}
 .focus{display:grid;gap:1rem}
@@ -206,6 +209,7 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;
 .scroll-hint{display:none}
 .stats{grid-template-columns:repeat(2,1fr)}
 .about,.edu{grid-template-columns:1fr}
+.about-main{grid-template-columns:1fr}.me{max-width:240px}
 .c-grid{grid-template-columns:repeat(2,1fr)}
 .menu-btn{display:block}
 .links{position:fixed;top:68px;left:1rem;right:1rem;flex-direction:column;padding:1rem;border-radius:20px;background:rgba(13,19,36,.97);backdrop-filter:blur(20px);border:1px solid var(--border);opacity:0;visibility:hidden;transform:translateY(-15px);transition:.4s var(--ease)}
@@ -302,10 +306,13 @@ section{padding:5rem 1.2rem}
 <span class="tag reveal">About Me</span>
 <h2 class="title reveal">Turning ideas into <span class="grad">production apps</span></h2>
 <div class="about">
-<div class="reveal">
+<div class="reveal about-main">
+<figure class="me"><img src="photo.jpg" alt="Khaled Alkhamisy" loading="lazy"></figure>
+<div>
 <p>I'm a <b>Flutter Developer</b> based in Egypt with a proven track record in delivering <b>large-scale production apps</b> including ride-hailing platforms, social networking and consultation ecosystems, and educational platforms.</p>
 <p>I care deeply about <b>Clean Architecture</b> and maintainable code, and I love pushing Flutter beyond its limits by writing <b>native iOS & Android code</b> through Method Channels — powering Live Activities, payment SDKs and In-App Purchases.</p>
 <p>Graduated in <b>Computer & Control Systems Engineering</b> in 2025.</p>
+</div>
 </div>
 <div class="focus">
 <div class="reveal" style="--d:.1s"><i>⚡</i><div><h4>Real-time Systems</h4><span>WebSockets, Pusher, Socket.IO, live tracking</span></div></div>
