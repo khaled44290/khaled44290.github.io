@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khaled Alkhamisy | Flutter Developer</title>
+<meta name="description" content="Flutter Developer with 4+ years building production apps for Android, iOS and Desktop — ride-hailing, social, payments and e-learning platforms.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://khaled44290.github.io/">
+<meta property="og:title" content="Khaled Alkhamisy | Flutter Developer">
+<meta property="og:description" content="4+ years building production Flutter apps for Android, iOS and Desktop. See my App Store & Google Play projects.">
+<meta property="og:image" content="https://khaled44290.github.io/photo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#070b16">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2313b9fd'/%3E%3Cstop offset='1' stop-color='%237c5cff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23fff' text-anchor='middle'%3EKA%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="photo.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#070b16;--bg2:#0d1324;--card:rgba(255,255,255,.04);--card-h:rgba(255,255,255,.07);--border:rgba(255,255,255,.08);--text:#e8ecf5;--muted:#8b93a7;--a1:#13b9fd;--a2:#7c5cff;--grad:linear-gradient(135deg,var(--a1),var(--a2));--ease:cubic-bezier(.2,.8,.2,1)}
@@ -65,6 +75,7 @@ section{max-width:1200px;margin:auto;padding:6.5rem 1.5rem}
 .btn svg{width:18px;height:18px;transition:.35s var(--ease)}
 .btn:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2)}
 .btn:hover svg{transform:translateX(4px)}
+.btn[download]:hover svg{transform:translateY(3px)}
 .btn.primary{background:var(--grad);border:0;color:#fff;box-shadow:0 12px 32px -10px rgba(124,92,255,.65)}
 .btn.primary:hover{box-shadow:0 18px 40px -10px rgba(124,92,255,.85)}
 .socials{display:flex;gap:.8rem;margin-top:2.2rem}
@@ -146,6 +157,17 @@ section{max-width:1200px;margin:auto;padding:6.5rem 1.5rem}
 .project.hide{display:none}
 .project.fade{opacity:0;scale:.92}
 .p-icon{width:54px;height:54px;border-radius:16px;background:var(--grad);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:1.3rem;color:#fff;margin-bottom:1.3rem;box-shadow:0 10px 25px -10px rgba(124,92,255,.7)}
+.p-icon img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.p-icon:has(img){background:var(--bg2);overflow:hidden}
+.p-shots{position:absolute;top:1.4rem;right:1.4rem;display:flex;pointer-events:none}
+.p-shots img{width:36px;aspect-ratio:400/867;object-fit:cover;border-radius:7px;border:2px solid var(--bg2);box-shadow:0 8px 20px -8px rgba(0,0,0,.7);margin-left:-14px;transition:.45s var(--ease)}
+.p-shots img:nth-child(1){transform:rotate(-8deg) translateY(4px)}
+.p-shots img:nth-child(3){transform:rotate(8deg) translateY(4px)}
+.project:hover .p-shots img:nth-child(1){transform:rotate(-14deg) translate(-8px,2px)}
+.project:hover .p-shots img:nth-child(2){transform:translateY(-6px)}
+.project:hover .p-shots img:nth-child(3){transform:rotate(14deg) translate(8px,2px)}
+.m-shots{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -2.4rem 1.6rem;padding:0 2.4rem .6rem}
+.m-shots img{flex:0 0 auto;width:170px;aspect-ratio:400/867;object-fit:cover;border-radius:18px;border:1px solid var(--border);scroll-snap-align:start;background:var(--bg2)}
 .project h3{font-size:1.25rem;margin-bottom:.3rem}
 .project .sub{color:var(--a1);font-size:.85rem;margin-bottom:.8rem;font-weight:500}
 .project p{color:var(--muted);font-size:.92rem;margin-bottom:1.2rem;flex:1}
@@ -223,7 +245,7 @@ section{padding:5rem 1.2rem}
 .phone{width:240px;height:490px}
 .chip{font-size:.72rem;padding:.45rem .8rem}
 .stat h3{font-size:2.2rem}
-.m-box{padding:2rem 1.5rem}
+.m-box{padding:2rem 1.5rem}.m-shots{margin:0 -1.5rem 1.6rem;padding:0 1.5rem .6rem}.m-shots img{width:140px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 .line span{transform:none}}
 </style>
@@ -259,7 +281,7 @@ section{padding:5rem 1.2rem}
 <p class="reveal" style="--d:.4s">Flutter Developer with 4+ years of experience building high-performance, scalable cross-platform apps for Android, iOS and Desktop — from ride-hailing and social platforms to educational ecosystems.</p>
 <div class="btns reveal" style="--d:.5s">
 <a href="#projects" class="btn primary">View Projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-<a href="#contact" class="btn">Let's Talk</a>
+<a href="Khaled_Alkhamisy_CV.pdf" class="btn" download>Download CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
 </div>
 <div class="socials reveal" style="--d:.6s">
 <a href="https://www.linkedin.com/in/khaled-elkhamisy-823bbb231/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.640-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
@@ -297,7 +319,7 @@ section{padding:5rem 1.2rem}
 
 <section class="stats">
 <div class="stat reveal"><h3 data-count="4" data-suffix="+">0</h3><p>Years of Experience</p></div>
-<div class="stat reveal" style="--d:.1s"><h3 data-count="10" data-suffix="+">0</h3><p>Shipped Projects</p></div>
+<div class="stat reveal" style="--d:.1s"><h3 data-count="9" data-suffix="+">0</h3><p>Shipped Projects</p></div>
 <div class="stat reveal" style="--d:.2s"><h3 data-count="4">0</h3><p>Companies</p></div>
 <div class="stat reveal" style="--d:.3s"><h3 data-count="3">0</h3><p>Platforms: Android, iOS, Desktop</p></div>
 </section>
@@ -385,6 +407,7 @@ section{padding:5rem 1.2rem}
 <div class="p-icon" id="mIcon"></div>
 <h3 id="mTitle"></h3>
 <div class="sub" id="mSub"></div>
+<div class="m-shots" id="mShots"></div>
 <ul id="mPoints"></ul>
 <div class="pills" id="mTech"></div>
 <div class="m-links" id="mLinks"></div>
@@ -405,13 +428,13 @@ const experience=[
 ];
 
 const projects=[
-{name:"DIRO",sub:"Ride-Hailing & Delivery",cats:["realtime","payments"],desc:"Real-time ride-hailing and delivery app with fare negotiation, live tracking and iOS Live Activities.",tech:["Google Maps","WebSockets","Swift","ActivityKit","Method Channels"],points:["Engineered a real-time ride-hailing and delivery application (similar to inDrive) featuring dynamic trip booking, fare negotiation, and live order tracking.","Integrated Google Maps API with optimized live route rendering, interactive polyline mapping, and precise location tracking for seamless driver-passenger navigation.","Wrote native code (Swift / ActivityKit) via Method Channels to implement iOS Live Activities and Dynamic Island, with persistent Android notifications, allowing users to follow the trip live from the lock screen even after leaving or closing the app.","Utilized WebSockets for instant state synchronization, real-time driver location updates, and low-latency ride dispatching."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/diro/id6761179748?l=ar"}]},
-{name:"Tayseer Community",sub:"Social Networking & Consultation",cats:["realtime","payments","social"],desc:"Large-scale platform combining a social feed, counseling sessions, real-time chat, voice calls and subscriptions.",tech:["Bloc/Cubit","GetIt","In-App Purchases","FCM","Hive","SQLite"],points:["Engineered a large-scale platform combining social networking, relationship counseling, session booking, and subscriptions, with two user roles: Consultants and End Users.","Built a Facebook-like social feed with posts/media sharing, comments, likes, friend connections, and granular privacy settings.","Implemented real-time chat and voice calling between users and consultants, along with consultation booking and session management workflows.","Integrated subscription plans using In-App Purchases (Android & iOS) and native payment solutions through Flutter Method Channels.","Applied Clean Architecture, Bloc/Cubit, and GetIt, with FCM push notifications, Hive/SQLite caching, and Google Maps location services."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/tayseer-community/id6756886227?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.tayser"}]},
-{name:"Itqan",sub:"Quran Memorization Platform",cats:["social","realtime"],desc:"Islamic educational platform managing in-person and online Quran memorization circles for a Saudi association.",tech:["Bloc","Clean Architecture","Video Meetings","Attendance"],points:["Designed and developed an Islamic educational platform for a Saudi charitable association to manage Quran memorization circles both in-person (mosque-based) and online.","Engineered personalized learning plans for students, supporting both new Quran memorization and structured revision workflows.","Integrated real-time online virtual classrooms via in-app video meetings alongside an automated attendance tracking system for physical mosque circles.","Applied Clean Architecture with Bloc state management to deliver a smooth, reliable experience for teachers, students, and admins."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/%D9%85%D9%86%D8%B5%D8%A9-%D8%A5%D8%AA%D9%82%D8%A7%D9%86/id6764329843?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.etqan&hl=en_US"}]},
-{name:"Altamayouz",sub:"Al-Tamayouz School E-Learning Platform",cats:["social","realtime"],desc:"Integrated e-learning platform for Al-Tamayouz School in Saudi Arabia, serving students from primary to secondary with lessons, exams and live classes.",tech:["Video Lessons","Live Sessions","Question Bank","Performance Reports","iPhone & iPad"],points:["Built an integrated e-learning platform for Al-Tamayouz School in Saudi Arabia, serving students from 1st primary to 3rd secondary based on the Saudi curriculum.","Delivered structured curriculum lessons with short, focused videos, plus a question bank with model answers, periodic quizzes, and simulated exams including Qiyas preparation.","Implemented live interactive sessions with specialized teachers and performance reports for students and parents, optimized for both iPhone and iPad."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/altmayouz/id6745446952?l=ar"}]},
-{name:"Sakhr Wasla",sub:"Service Marketplace & Escrow",cats:["payments","realtime"],desc:"Saudi marketplace connecting clients with verified offices, featuring a secure escrow payment flow.",tech:["Escrow Payments","Real-time Chat","Ratings","REST APIs"],points:["Built a service marketplace for Saudi Arabia connecting clients with licensed, verified offices across legal, engineering, business advisory, academic, and accounting services.","Implemented an escrow payment flow where funds are held in the app's guarantee account until service completion is confirmed, protecting both clients and providers.","Developed real-time chat with service providers, multi-provider price quote comparison, and a verified ratings & reviews system."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/%D8%B5%D8%AE%D8%B1-%D9%88%D8%B5%D9%84%D8%A9/id6769052937?l=ar"}]},
-{name:"PregnaZone",sub:"Pregnancy Tracking & Maternal Health",cats:["social"],desc:"Week-by-week pregnancy companion with fetal growth tracking, reminders and medically sourced tips.",tech:["Local Notifications","Reminders","Responsive UI"],points:["Developed a pregnancy tracking app guiding expectant mothers week by week from conception to delivery, with fetal growth (weight, length) and maternal body changes.","Implemented scheduled reminders for check-ups, vitamins, and medical follow-ups, plus medically sourced tips for handling pregnancy symptoms.","Delivered a simple, user-friendly interface tailored to mothers at every stage of pregnancy."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/pregnazone/id6758344842?l=ar"}]},
-{name:"G-Zone",sub:"Multi-Game Application",cats:["realtime"],desc:"Six real-time multiplayer games with leaderboards, deep linking and a modular architecture.",tech:["WebSockets","Deep Linking","Cubit","REST APIs"],points:["Developed a mobile application with 6 different games: Al-Fakh, Differences, Quiz Questions, Call of War, and two bounty-based custom games.","Used WebSockets for real-time multiplayer interaction and integrated RESTful APIs for game content, user management, and leaderboards.","Implemented Deep Linking for smooth in-app navigation and game sharing, with Clean Architecture and Cubit for a scalable, modular codebase."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/g-zone/id6741517090?l=ar"}]},
+{name:"DIRO",slug:"diro",shots:4,sub:"Ride-Hailing & Delivery",cats:["realtime","payments"],desc:"Real-time ride-hailing and delivery app with fare negotiation, live tracking and iOS Live Activities.",tech:["Google Maps","WebSockets","Swift","ActivityKit","Method Channels"],points:["Engineered a real-time ride-hailing and delivery application (similar to inDrive) featuring dynamic trip booking, fare negotiation, and live order tracking.","Integrated Google Maps API with optimized live route rendering, interactive polyline mapping, and precise location tracking for seamless driver-passenger navigation.","Wrote native code (Swift / ActivityKit) via Method Channels to implement iOS Live Activities and Dynamic Island, with persistent Android notifications, allowing users to follow the trip live from the lock screen even after leaving or closing the app.","Utilized WebSockets for instant state synchronization, real-time driver location updates, and low-latency ride dispatching."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/diro/id6761179748?l=ar"}]},
+{name:"Tayseer Community",slug:"tayseer",shots:4,sub:"Social Networking & Consultation",cats:["realtime","payments","social"],desc:"Large-scale platform combining a social feed, counseling sessions, real-time chat, voice calls and subscriptions.",tech:["Bloc/Cubit","GetIt","In-App Purchases","FCM","Hive","SQLite"],points:["Engineered a large-scale platform combining social networking, relationship counseling, session booking, and subscriptions, with two user roles: Consultants and End Users.","Built a Facebook-like social feed with posts/media sharing, comments, likes, friend connections, and granular privacy settings.","Implemented real-time chat and voice calling between users and consultants, along with consultation booking and session management workflows.","Integrated subscription plans using In-App Purchases (Android & iOS) and native payment solutions through Flutter Method Channels.","Applied Clean Architecture, Bloc/Cubit, and GetIt, with FCM push notifications, Hive/SQLite caching, and Google Maps location services."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/tayseer-community/id6756886227?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.tayser"}]},
+{name:"Itqan",slug:"itqan",shots:4,sub:"Quran Memorization Platform",cats:["social","realtime"],desc:"Islamic educational platform managing in-person and online Quran memorization circles for a Saudi association.",tech:["Bloc","Clean Architecture","Video Meetings","Attendance"],points:["Designed and developed an Islamic educational platform for a Saudi charitable association to manage Quran memorization circles both in-person (mosque-based) and online.","Engineered personalized learning plans for students, supporting both new Quran memorization and structured revision workflows.","Integrated real-time online virtual classrooms via in-app video meetings alongside an automated attendance tracking system for physical mosque circles.","Applied Clean Architecture with Bloc state management to deliver a smooth, reliable experience for teachers, students, and admins."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/%D9%85%D9%86%D8%B5%D8%A9-%D8%A5%D8%AA%D9%82%D8%A7%D9%86/id6764329843?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.etqan&hl=en_US"}]},
+{name:"Altamayouz",slug:"altamayouz",shots:4,sub:"Al-Tamayouz School E-Learning Platform",cats:["social","realtime"],desc:"Integrated e-learning platform for Al-Tamayouz School in Saudi Arabia, serving students from primary to secondary with lessons, exams and live classes.",tech:["Video Lessons","Live Sessions","Question Bank","Performance Reports","iPhone & iPad"],points:["Built an integrated e-learning platform for Al-Tamayouz School in Saudi Arabia, serving students from 1st primary to 3rd secondary based on the Saudi curriculum.","Delivered structured curriculum lessons with short, focused videos, plus a question bank with model answers, periodic quizzes, and simulated exams including Qiyas preparation.","Implemented live interactive sessions with specialized teachers and performance reports for students and parents, optimized for both iPhone and iPad."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/altmayouz/id6745446952?l=ar"}]},
+{name:"Sakhr Wasla",slug:"sakhr",shots:4,sub:"Service Marketplace & Escrow",cats:["payments","realtime"],desc:"Saudi marketplace connecting clients with verified offices, featuring a secure escrow payment flow.",tech:["Escrow Payments","Real-time Chat","Ratings","REST APIs"],points:["Built a service marketplace for Saudi Arabia connecting clients with licensed, verified offices across legal, engineering, business advisory, academic, and accounting services.","Implemented an escrow payment flow where funds are held in the app's guarantee account until service completion is confirmed, protecting both clients and providers.","Developed real-time chat with service providers, multi-provider price quote comparison, and a verified ratings & reviews system."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/%D8%B5%D8%AE%D8%B1-%D9%88%D8%B5%D9%84%D8%A9/id6769052937?l=ar"}]},
+{name:"PregnaZone",slug:"pregnazone",shots:4,sub:"Pregnancy Tracking & Maternal Health",cats:["social"],desc:"Week-by-week pregnancy companion with fetal growth tracking, reminders and medically sourced tips.",tech:["Local Notifications","Reminders","Responsive UI"],points:["Developed a pregnancy tracking app guiding expectant mothers week by week from conception to delivery, with fetal growth (weight, length) and maternal body changes.","Implemented scheduled reminders for check-ups, vitamins, and medical follow-ups, plus medically sourced tips for handling pregnancy symptoms.","Delivered a simple, user-friendly interface tailored to mothers at every stage of pregnancy."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/pregnazone/id6758344842?l=ar"}]},
+{name:"G-Zone",slug:"gzone",shots:4,sub:"Multi-Game Application",cats:["realtime"],desc:"Six real-time multiplayer games with leaderboards, deep linking and a modular architecture.",tech:["WebSockets","Deep Linking","Cubit","REST APIs"],points:["Developed a mobile application with 6 different games: Al-Fakh, Differences, Quiz Questions, Call of War, and two bounty-based custom games.","Used WebSockets for real-time multiplayer interaction and integrated RESTful APIs for game content, user management, and leaderboards.","Implemented Deep Linking for smooth in-app navigation and game sharing, with Clean Architecture and Cubit for a scalable, modular codebase."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/g-zone/id6741517090?l=ar"}]},
 {name:"Elgazar",sub:"Butcher Management — Desktop",cats:["other"],desc:"Flutter desktop app helping butchers select carcass parts, set quantities in kg and manage portions.",tech:["Flutter Desktop","Clean UI"],points:["Developed a Flutter desktop application that helps butchers select specific carcass parts, specify quantities in kilograms, and manage meat portions efficiently."],links:[{label:"Desktop",url:"https://drive.google.com/file/d/12aXm8R7DhPWxMqXK6NRI3fcZpUNAR9p8/view?usp=drivesdk"}]},
 {name:"Ayadina",sub:"Egyptian Handicrafts Marketplace",cats:["other","social"],desc:"Marketplace empowering Egyptian artisans to register and showcase their handmade products.",tech:["Marketplace","REST APIs","Firebase"],points:["Built a marketplace application for Egyptian handicrafts that enables artisans to easily register and showcase their handmade products."],links:[{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.ayadina.handmade&hl=en"},{label:"APK",url:"https://drive.google.com/file/d/1USjy9hzTV47eeCJBc4Nutcq3QDL71DnV/view?usp=drivesdk"}]}
 ];
@@ -444,10 +467,12 @@ $("#timeline").insertAdjacentHTML("beforeend",experience.map((j,i)=>`
 </div>`).join(""));
 }
 
+const iconHTML=p=>p.slug?`<img src="img/apps/${p.slug}-icon.jpg" alt="${p.name} icon" loading="lazy">`:initials(p.name);
+
 function renderProjects(){
 $("#grid").innerHTML=projects.map((p,i)=>`
 <article class="project reveal" style="--d:${(i%3)*.08}s" data-i="${i}" data-cats="${p.cats.join(" ")}">
-<div class="p-icon">${initials(p.name)}</div>
+<div class="p-icon">${iconHTML(p)}</div>${p.slug?`<div class="p-shots">${[1,2,3].map(n=>`<img src="img/apps/${p.slug}-${n}.jpg" alt="" loading="lazy">`).join("")}</div>`:""}
 <h3>${p.name}</h3>
 <div class="sub">${p.sub}</div>
 <p>${p.desc}</p>
@@ -562,7 +587,9 @@ $("#grid").addEventListener("click",e=>{
 const card=e.target.closest(".project");
 if(!card)return;
 const p=projects[card.dataset.i];
-$("#mIcon").textContent=initials(p.name);
+$("#mIcon").innerHTML=iconHTML(p);
+$("#mShots").innerHTML=p.slug?Array.from({length:p.shots},(_,n)=>`<img src="img/apps/${p.slug}-${n+1}.jpg" alt="${p.name} screenshot ${n+1}" loading="lazy">`).join(""):"";
+$("#mShots").style.display=p.slug?"":"none";
 $("#mTitle").textContent=p.name;
 $("#mSub").textContent=p.sub;
 $("#mPoints").innerHTML=p.points.map(x=>`<li>${x}</li>`).join("");
