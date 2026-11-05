@@ -168,6 +168,17 @@ section{max-width:1200px;margin:auto;padding:6.5rem 1.5rem}
 .project:hover .p-shots img:nth-child(3){transform:rotate(14deg) translate(8px,2px)}
 .m-shots{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -2.4rem 1.6rem;padding:0 2.4rem .6rem}
 .m-shots img{flex:0 0 auto;width:170px;aspect-ratio:400/867;object-fit:cover;border-radius:18px;border:1px solid var(--border);scroll-snap-align:start;background:var(--bg2)}
+.spot{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;padding:2.4rem;margin-bottom:2rem;border-radius:28px;background:linear-gradient(135deg,rgba(19,185,253,.08),rgba(124,92,255,.1));border:1px solid var(--border)}
+.spot-vid{width:260px;aspect-ratio:9/16;padding:8px;border-radius:36px;background:#0a0f1e;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 70px -25px rgba(124,92,255,.7)}
+.spot-vid video{width:100%;height:100%;object-fit:cover;border-radius:28px;display:block;background:#efeaff}
+.spot-tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--a1);margin-bottom:.8rem}
+.spot h3{font-size:2rem;margin-bottom:.8rem}
+.spot p{color:var(--muted);margin-bottom:1.2rem}
+.spot ul{list-style:none;display:grid;gap:.6rem;margin-bottom:1.4rem}
+.spot li{color:var(--muted);padding-left:1.5rem;position:relative}
+.spot li::before{content:"";position:absolute;left:0;top:.6rem;width:8px;height:8px;border-radius:2px;background:var(--grad);transform:rotate(45deg)}
+.spot .pills{margin-bottom:1.6rem}
+.m-shots video{flex:0 0 auto;width:170px;aspect-ratio:9/16;object-fit:cover;border-radius:18px;border:1px solid var(--border);scroll-snap-align:start;background:#efeaff}
 .project h3{font-size:1.25rem;margin-bottom:.3rem}
 .project .sub{color:var(--a1);font-size:.85rem;margin-bottom:.8rem;font-weight:500}
 .project p{color:var(--muted);font-size:.92rem;margin-bottom:1.2rem;flex:1}
@@ -231,6 +242,7 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;
 .scroll-hint{display:none}
 .stats{grid-template-columns:repeat(2,1fr)}
 .about,.edu{grid-template-columns:1fr}
+.spot{grid-template-columns:1fr;justify-items:center;gap:2rem}.spot-text{width:100%}
 .about-main{grid-template-columns:1fr}.me{max-width:240px}
 .c-grid{grid-template-columns:repeat(2,1fr)}
 .menu-btn{display:block}
@@ -245,7 +257,8 @@ section{padding:5rem 1.2rem}
 .phone{width:240px;height:490px}
 .chip{font-size:.72rem;padding:.45rem .8rem}
 .stat h3{font-size:2.2rem}
-.m-box{padding:2rem 1.5rem}.m-shots{margin:0 -1.5rem 1.6rem;padding:0 1.5rem .6rem}.m-shots img{width:140px}
+.m-box{padding:2rem 1.5rem}.m-shots{margin:0 -1.5rem 1.6rem;padding:0 1.5rem .6rem}.m-shots img,.m-shots video{width:140px}
+.spot{padding:1.6rem 1.2rem}.spot-vid{width:220px}.spot h3{font-size:1.6rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 .line span{transform:none}}
 </style>
@@ -361,6 +374,22 @@ section{padding:5rem 1.2rem}
 <button data-f="social">Social & Education</button>
 <button data-f="other">Desktop & More</button>
 </div>
+<div class="spot reveal">
+<div class="spot-vid"><video id="diroVid" src="video/diro.mp4" poster="video/diro-poster.jpg" muted loop playsinline preload="none" aria-label="DIRO app demo video"></video></div>
+<div class="spot-text">
+<span class="spot-tag">Featured project</span>
+<h3>DIRO <span class="grad">— Ride smarter</span></h3>
+<p>A real-time ride-hailing and delivery app, similar to inDrive, live on the App Store and Google Play.</p>
+<ul>
+<li>Fare negotiation with an upfront price estimate</li>
+<li>Live driver tracking, synced between rider and driver over WebSockets</li>
+<li>iOS Live Activities and Dynamic Island, written natively in Swift</li>
+<li>Smart re-routing, a driver earnings dashboard and rewards</li>
+</ul>
+<div class="pills"><span>Flutter</span><span>Google Maps</span><span>WebSockets</span><span>Swift</span><span>ActivityKit</span></div>
+<div class="btns"><a class="btn primary" href="https://apps.apple.com/eg/app/diro/id6761179748?l=ar" target="_blank">App Store</a><a class="btn" href="https://play.google.com/store/apps/details?id=com.athr.diro" target="_blank">Google Play</a></div>
+</div>
+</div>
 <div class="grid" id="grid"></div>
 </section>
 
@@ -428,7 +457,7 @@ const experience=[
 ];
 
 const projects=[
-{name:"DIRO",slug:"diro",shots:4,sub:"Ride-Hailing & Delivery",cats:["realtime","payments"],desc:"Real-time ride-hailing and delivery app with fare negotiation, live tracking and iOS Live Activities.",tech:["Google Maps","WebSockets","Swift","ActivityKit","Method Channels"],points:["Engineered a real-time ride-hailing and delivery application (similar to inDrive) featuring dynamic trip booking, fare negotiation, and live order tracking.","Integrated Google Maps API with optimized live route rendering, interactive polyline mapping, and precise location tracking for seamless driver-passenger navigation.","Wrote native code (Swift / ActivityKit) via Method Channels to implement iOS Live Activities and Dynamic Island, with persistent Android notifications, allowing users to follow the trip live from the lock screen even after leaving or closing the app.","Utilized WebSockets for instant state synchronization, real-time driver location updates, and low-latency ride dispatching."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/diro/id6761179748?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.diro"}]},
+{name:"DIRO",slug:"diro",shots:4,video:"video/diro.mp4",sub:"Ride-Hailing & Delivery",cats:["realtime","payments"],desc:"Real-time ride-hailing and delivery app with fare negotiation, live tracking and iOS Live Activities.",tech:["Google Maps","WebSockets","Swift","ActivityKit","Method Channels"],points:["Engineered a real-time ride-hailing and delivery application (similar to inDrive) featuring dynamic trip booking, fare negotiation, and live order tracking.","Integrated Google Maps API with optimized live route rendering, interactive polyline mapping, and precise location tracking for seamless driver-passenger navigation.","Wrote native code (Swift / ActivityKit) via Method Channels to implement iOS Live Activities and Dynamic Island, with persistent Android notifications, allowing users to follow the trip live from the lock screen even after leaving or closing the app.","Utilized WebSockets for instant state synchronization, real-time driver location updates, and low-latency ride dispatching."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/diro/id6761179748?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.diro"}]},
 {name:"Tayseer Community",slug:"tayseer",shots:4,sub:"Social Networking & Consultation",cats:["realtime","payments","social"],desc:"Large-scale platform combining a social feed, counseling sessions, real-time chat, voice calls and subscriptions.",tech:["Bloc/Cubit","GetIt","In-App Purchases","FCM","Hive","SQLite"],points:["Engineered a large-scale platform combining social networking, relationship counseling, session booking, and subscriptions, with two user roles: Consultants and End Users.","Built a Facebook-like social feed with posts/media sharing, comments, likes, friend connections, and granular privacy settings.","Implemented real-time chat and voice calling between users and consultants, along with consultation booking and session management workflows.","Integrated subscription plans using In-App Purchases (Android & iOS) and native payment solutions through Flutter Method Channels.","Applied Clean Architecture, Bloc/Cubit, and GetIt, with FCM push notifications, Hive/SQLite caching, and Google Maps location services."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/tayseer-community/id6756886227?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.tayser"}]},
 {name:"Itqan",slug:"itqan",shots:4,sub:"Quran Memorization Platform",cats:["social","realtime"],desc:"Islamic educational platform managing in-person and online Quran memorization circles for a Saudi association.",tech:["Bloc","Clean Architecture","Video Meetings","Attendance"],points:["Designed and developed an Islamic educational platform for a Saudi charitable association to manage Quran memorization circles both in-person (mosque-based) and online.","Engineered personalized learning plans for students, supporting both new Quran memorization and structured revision workflows.","Integrated real-time online virtual classrooms via in-app video meetings alongside an automated attendance tracking system for physical mosque circles.","Applied Clean Architecture with Bloc state management to deliver a smooth, reliable experience for teachers, students, and admins."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/%D9%85%D9%86%D8%B5%D8%A9-%D8%A5%D8%AA%D9%82%D8%A7%D9%86/id6764329843?l=ar"},{label:"Google Play",url:"https://play.google.com/store/apps/details?id=com.athr.etqan&hl=en_US"}]},
 {name:"Altamayouz",slug:"altamayouz",shots:4,sub:"Al-Tamayouz School E-Learning Platform",cats:["social","realtime"],desc:"Integrated e-learning platform for Al-Tamayouz School in Saudi Arabia, serving students from primary to secondary with lessons, exams and live classes.",tech:["Video Lessons","Live Sessions","Question Bank","Performance Reports","iPhone & iPad"],points:["Built an integrated e-learning platform for Al-Tamayouz School in Saudi Arabia, serving students from 1st primary to 3rd secondary based on the Saudi curriculum.","Delivered structured curriculum lessons with short, focused videos, plus a question bank with model answers, periodic quizzes, and simulated exams including Qiyas preparation.","Implemented live interactive sessions with specialized teachers and performance reports for students and parents, optimized for both iPhone and iPad."],links:[{label:"App Store",url:"https://apps.apple.com/eg/app/altmayouz/id6745446952?l=ar"}]},
@@ -580,15 +609,22 @@ card.addEventListener("mouseleave",()=>card.style.transform="");
 });
 }
 
+function setupSpotVideo(){
+const v=$("#diroVid");
+if(!v)return;
+if(matchMedia("(prefers-reduced-motion:reduce)").matches){v.controls=true;return}
+new IntersectionObserver(([e])=>{e.isIntersecting?v.play().catch(()=>{v.controls=true}):v.pause()},{threshold:.35}).observe(v);
+}
+
 function setupModal(){
 const modal=$("#modal");
-const close=()=>{modal.classList.remove("open");document.body.style.overflow=""};
+const close=()=>{modal.classList.remove("open");document.body.style.overflow="";$("#mShots").innerHTML=""};
 $("#grid").addEventListener("click",e=>{
 const card=e.target.closest(".project");
 if(!card)return;
 const p=projects[card.dataset.i];
 $("#mIcon").innerHTML=iconHTML(p);
-$("#mShots").innerHTML=p.slug?Array.from({length:p.shots},(_,n)=>`<img src="img/apps/${p.slug}-${n+1}.jpg" alt="${p.name} screenshot ${n+1}" loading="lazy">`).join(""):"";
+$("#mShots").innerHTML=(p.video?`<video src="${p.video}" poster="video/${p.slug}-poster.jpg" muted loop playsinline autoplay controls></video>`:"")+(p.slug?Array.from({length:p.shots},(_,n)=>`<img src="img/apps/${p.slug}-${n+1}.jpg" alt="${p.name} screenshot ${n+1}" loading="lazy">`).join(""):"");
 $("#mShots").style.display=p.slug?"":"none";
 $("#mTitle").textContent=p.name;
 $("#mSub").textContent=p.sub;
@@ -676,6 +712,7 @@ setupMenu();
 setupFilters();
 setupTilt();
 setupModal();
+setupSpotVideo();
 setupContact();
 setupGlow();
 typeWriter();
